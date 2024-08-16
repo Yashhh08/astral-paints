@@ -21,6 +21,11 @@ const config = {
       fontFamily: {
         poppins: ["var(--font-poppins)", "sans"],
       },
+      backgroundImage: {
+        'banner-1': `url("/assets/images/hero-image-1.png")`,
+        'banner-2': `url("/assets/images/hero-image-2.jpg")`,
+        'banner-3': `url("/assets/images/hero-image-3.jpg")`,
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
