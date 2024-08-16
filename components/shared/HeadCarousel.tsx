@@ -153,7 +153,7 @@ const HeadCarousel = () => {
       </CarouselContent>
       {/* <CarouselPrevious />
       <CarouselNext /> */}
-      <div className="flex justify-start px-5 items-center space-x-2 absolute bottom-5">
+      <div className="flex justify-start px-5 items-center space-x-2 absolute bottom-12">
         {Array.from({ length: 3 }, (_, index) => (
           <div
             key={index}
