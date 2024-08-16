@@ -7,7 +7,7 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 const AboutSection = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center w-11/12 m-auto gap-10">
-      <div className="flex flex-col gap-5 flex-1">
+      <div className="flex flex-col gap-4 flex-1">
         <p className="font-medium text-lg">About Astral Paints</p>
         <h2 className="font-bold text-3xl flex gap-2 items-center">
           Bringing your dreams to life
