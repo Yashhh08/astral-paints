@@ -165,7 +165,7 @@ const HeadCarousel = () => {
         ))}
       </div>
 
-      <div className="w-full h-[50vh] absolute -bottom-[18vh] select-none">
+      <div className="w-full h-[50vh] absolute -bottom-[18vh] select-none z-10">
         <Image
           src={"/assets/images/colors.png"}
           alt="colors"
