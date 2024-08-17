@@ -36,8 +36,6 @@ export default function Home() {
       <section>
         <BlogSection />
       </section>
-
-      <section className="h-screen"></section>
     </main>
   );
 }

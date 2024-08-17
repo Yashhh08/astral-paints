@@ -1,3 +1,4 @@
+import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import { Metadata } from "next";
 import React from "react";
@@ -20,7 +21,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="flex flex-col h-screen">
       <Navbar />
       <main className="flex-1">{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
