@@ -25,6 +25,7 @@ const config = {
         'banner-1': `url("/assets/images/hero-image-1.png")`,
         'banner-2': `url("/assets/images/hero-image-2.jpg")`,
         'banner-3': `url("/assets/images/hero-image-3.jpg")`,
+        'dealer': `url("/assets/images/dealer-bg.png")`,
       },
       colors: {
         border: "hsl(var(--border))",

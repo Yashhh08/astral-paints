@@ -1,6 +1,7 @@
 import AboutSection from "@/components/shared/AboutSection";
 import CategorySection from "@/components/shared/CategorySection";
 import ColorSection from "@/components/shared/ColorSection";
+import DealerSection from "@/components/shared/DealerSection";
 import HeadCarousel from "@/components/shared/HeadCarousel";
 import ServiceSection from "@/components/shared/ServiceSection";
 
@@ -25,6 +26,10 @@ export default function Home() {
 
       <section>
         <ColorSection />
+      </section>
+
+      <section>
+        <DealerSection />
       </section>
 
       <section className="h-screen"></section>
