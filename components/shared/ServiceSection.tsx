@@ -13,7 +13,7 @@ const ServiceSection = () => {
           <span>
             <Image
               src={"/assets/images/service-yellow.png"}
-              alt="category-orange"
+              alt="service-yellow"
               width={157}
               height={10}
             />

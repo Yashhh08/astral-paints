@@ -14,7 +14,7 @@ const ColorSection = () => {
           <span>
             <Image
               src={"/assets/images/colors-green.png"}
-              alt="category-orange"
+              alt="colors-green"
               width={157}
               height={10}
             />
