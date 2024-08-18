@@ -3,13 +3,13 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 
-const BlogSection = () => {
+const BlogSection = ({ homepageData }: { homepageData: any }) => {
   return (
     <div className="w-11/12 m-auto flex flex-col gap-4">
       <div className="flex flex-col gap-4">
-        <p className="font-medium text-lg">Our Blog</p>
+        <p className="font-medium text-lg">{homepageData.blogSubtitle}</p>
         <h2 className="font-bold text-3xl flex gap-2 items-center">
-          Latest
+          {homepageData.blogTitle}
           <span>
             <Image
               src={"/assets/images/blog-blue.png"}

@@ -3,14 +3,14 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 
-const ColorSection = () => {
+const ColorSection = ({ homepageData }: { homepageData: any }) => {
   return (
     <div className="w-11/12 m-auto flex flex-col gap-4">
-      <p className="font-medium text-lg">Colours</p>
+      <p className="font-medium text-lg">{homepageData.homeColoursSubtitle}</p>
 
       <div className="flex justify-between items-center w-full gap-7">
         <h2 className="font-bold text-3xl flex gap-2 items-center">
-          Popular Colours
+          {homepageData.homeColoursTitle}
           <span>
             <Image
               src={"/assets/images/colors-green.png"}
@@ -21,9 +21,9 @@ const ColorSection = () => {
           </span>
         </h2>
 
-        <Link href="/contact">
+        <Link href={homepageData.homeColoursButton.url}>
           <Button className="bg-white text-[#00AE44] border border-[#00AE44] hover:text-white font-semibold rounded-[20px]">
-            Explore More
+            {homepageData.homeColoursButton.title}
           </Button>
         </Link>
       </div>

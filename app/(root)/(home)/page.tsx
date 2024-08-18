@@ -25,23 +25,23 @@ export default async function Home() {
       </section>
 
       <section>
-        <CategorySection />
+        <CategorySection homepageData={homepage} />
       </section>
 
       <section>
-        <ServiceSection />
+        <ServiceSection homepageData={homepage} />
       </section>
 
       <section>
-        <ColorSection />
+        <ColorSection homepageData={homepage} />
       </section>
 
       <section>
-        <DealerSection />
+        <DealerSection homepageData={homepage} />
       </section>
 
       <section>
-        <BlogSection />
+        <BlogSection homepageData={homepage} />
       </section>
     </main>
   );

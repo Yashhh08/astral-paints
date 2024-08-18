@@ -1,19 +1,24 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
+import HtmlContent from "./HtmlContent";
 
-const DealerSection = () => {
+const DealerSection = ({ homepageData }: { homepageData: any }) => {
   return (
-    <div className="flex flex-col justify-center items-center text-center p-5 gap-4 bg-dealer bg-cover h-[350px] text-white ">
-      <p className="font-medium text-lg">Join the Success Journey</p>
-      <h3 className="font-bold text-3xl">Become A Dealer</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur. Integer dui quam nisi <br />
-        in ornare. Nec in tristique et ultrices sit ullamcorper massa tempor et.
-      </p>
-      <Link href="/contact">
+    <div
+      className="flex flex-col justify-center items-center text-center p-5 gap-4 bg-cover h-[350px] text-white"
+      style={{
+        backgroundImage: `url(${homepageData.homeJoinBackgroundImage.node.sourceUrl})`,
+      }}
+    >
+      <p className="font-medium text-lg">{homepageData.homeJoinSubtitle}</p>
+      <h3 className="font-bold text-3xl">{homepageData.homeJoinTitle}</h3>
+
+      <HtmlContent html={homepageData.homeJoinDescription} />
+
+      <Link href={homepageData.homeJoinButton.url}>
         <Button className="bg-white text-black hover:text-white font-semibold rounded-[20px]">
-          Read More
+          {homepageData.homeJoinButton.title}
         </Button>
       </Link>
     </div>
