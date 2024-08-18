@@ -7,6 +7,31 @@ import HeadCarousel from "@/components/shared/HeadCarousel";
 import ServiceSection from "@/components/shared/ServiceSection";
 import { getHomepageData } from "@/lib/action";
 
+export async function generateMetadata() {
+  const data = await getHomepageData();
+  const seo = data.pages.nodes[0].seo;
+
+  return {
+    title: seo.title,
+    description: seo.metaDesc,
+    keywords: seo.metaKeywords,
+    canonical: seo.canonical,
+    openGraph: {
+      type: seo.opengraphType,
+      site_name: seo.opengraphSiteName,
+      title: seo.opengraphTitle,
+      description: seo.opengraphDescription,
+      url: seo.opengraphUrl,
+      images: [
+        {
+          url: seo.opengraphImage.mediaItemUrl,
+          alt: seo.opengraphTitle,
+        },
+      ],
+    },
+  };
+}
+
 export default async function Home() {
   const data = await getHomepageData();
 
@@ -49,6 +74,3 @@ export default async function Home() {
     </main>
   );
 }
-
-// completed before seo section
-// remaining: allColourCategory | blogs

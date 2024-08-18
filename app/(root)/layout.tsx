@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "Astral Paints",
   description: "",
   icons: {
-    icon: "/assets/images/",
+    icon: "/assets/images/astral-icon.png",
   },
   openGraph: {
-    title: "OnVigil",
+    title: "Astral Paints",
     description: "",
-    images: [{ url: "/assets/images/" }],
+    images: [{ url: "/assets/images/astral-icon.png" }],
   },
 };
 
