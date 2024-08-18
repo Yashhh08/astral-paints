@@ -3,7 +3,13 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 
-const ColorSection = ({ homepageData }: { homepageData: any }) => {
+const ColorSection = ({
+  homepageData,
+  colourCategories,
+}: {
+  homepageData: any;
+  colourCategories: any;
+}) => {
   return (
     <div className="w-11/12 m-auto flex flex-col gap-4">
       <p className="font-medium text-lg">{homepageData.homeColoursSubtitle}</p>
@@ -29,38 +35,30 @@ const ColorSection = ({ homepageData }: { homepageData: any }) => {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-5 transition-all duration-300">
-        <div className="w-[190px] h-[320px] flex-1 flex flex-col hover:shadow-2xl rounded-[20px] justify-center items-center hover:border gap-2 group transition-all duration-300">
-          <p className="font-semibold text-xs group-hover:block hidden transition-all">
-            Astral Paints
-          </p>
-          <div className="w-full h-[200px] bg-[#FAE0B2]">
-            <div className="w-full h-full border border-white scale-95"></div>
-          </div>
-          <p>Colour Name</p>
-          <p className="text-sm">Colour Code</p>
-        </div>
-
-        <div className="w-[190px] h-[320px] flex-1 flex flex-col hover:shadow-2xl rounded-[20px] justify-center items-center hover:border gap-2 group transition-all duration-300">
-          <p className="font-semibold text-xs group-hover:block hidden transition-all">
-            Astral Paints
-          </p>
-          <div className="w-full h-[200px] bg-[#FBC9C3]">
-            <div className="w-full h-full border border-white scale-95"></div>
-          </div>
-          <p>Colour Name</p>
-          <p className="text-sm">Colour Code</p>
-        </div>
-
-        <div className="w-[190px] h-[320px] flex-1 flex flex-col hover:shadow-2xl rounded-[20px] justify-center items-center hover:border gap-2 group transition-all duration-300">
-          <p className="font-semibold text-xs group-hover:block hidden transition-all">
-            Astral Paints
-          </p>
-          <div className="w-full h-[200px] bg-[#00C1DE]">
-            <div className="w-full h-full border border-white scale-95"></div>
-          </div>
-          <p>Colour Name</p>
-          <p className="text-sm">Colour Code</p>
-        </div>
+        {colourCategories.map((category: any) => {
+          return category.colours.nodes.map((color: any) => {
+            return (
+              <div
+                key={color.slug}
+                className="w-[190px] h-[320px] flex-1 flex flex-col hover:shadow-2xl rounded-[20px] justify-center items-center hover:border gap-2 group transition-all duration-300"
+              >
+                <p className="font-semibold text-xs group-hover:block hidden transition-all">
+                  {color.title}
+                </p>
+                <div
+                  className="w-full h-[200px]"
+                  style={{ backgroundColor: color.colourInfo.selectColor }}
+                >
+                  <div className="w-full h-full border border-white scale-95"></div>
+                </div>
+                <p>{color.title}</p>
+                <p className="text-sm">
+                  {color.colourInfo.selectColor.toUpperCase()}
+                </p>
+              </div>
+            );
+          });
+        })}
 
         <div className="w-[190px] h-[320px] flex-1 flex flex-col hover:shadow-2xl rounded-[20px] justify-center items-center hover:border gap-2 group transition-all duration-300">
           <p className="font-semibold text-xs group-hover:block hidden transition-all">

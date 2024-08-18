@@ -33,7 +33,10 @@ export default async function Home() {
       </section>
 
       <section>
-        <ColorSection homepageData={homepage} />
+        <ColorSection
+          homepageData={homepage}
+          colourCategories={colourCategories}
+        />
       </section>
 
       <section>
@@ -41,8 +44,11 @@ export default async function Home() {
       </section>
 
       <section>
-        <BlogSection homepageData={homepage} />
+        <BlogSection homepageData={homepage} blogs={blogs} />
       </section>
     </main>
   );
 }
+
+// completed before seo section
+// remaining: allColourCategory | blogs

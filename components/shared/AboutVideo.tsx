@@ -35,7 +35,7 @@ const AboutVideo = ({
         Your browser does not support the video tag.
       </video>
 
-      <p className="absolute left-[50%] top-[50%] transform -translate-x-[50%] -translate-y-[50%] z-10 opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 font-semibold text-center text-white">
+      <p className="absolute left-[50%] max-sm:mt-2 md:top-[50%] transform -translate-x-[50%] md:-translate-y-[50%] z-10 opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 font-semibold text-center text-white">
         Playing random video because api endpoint giving this url, {videoUrl}
       </p>
 

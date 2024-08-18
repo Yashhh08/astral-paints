@@ -3,7 +3,13 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 
-const BlogSection = ({ homepageData }: { homepageData: any }) => {
+const BlogSection = ({
+  homepageData,
+  blogs,
+}: {
+  homepageData: any;
+  blogs: any;
+}) => {
   return (
     <div className="w-11/12 m-auto flex flex-col gap-4">
       <div className="flex flex-col gap-4">
@@ -22,42 +28,29 @@ const BlogSection = ({ homepageData }: { homepageData: any }) => {
       </div>
 
       <div className="grid max-sm:grid-cols-1 grid-cols-3 gap-5 col-span-3 lg:col-span-1 lg:row-span-2">
-        <div className="flex flex-col gap-5">
-          <div className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px]">
+        {blogs.map((blog: any) => (
+          <div
+            key={blog.slug}
+            className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px]"
+          >
             <Image
-              src={"/assets/images/blog-1.png"}
-              alt="image"
+              src={blog.featuredImage.node.sourceUrl}
+              alt={blog.featuredImage.node.slug}
               fill
               className="object-cover"
             />
             <div className="absolute bottom-2 left-4 text-white font-semibold text-xl space-y-2">
               <p className="backdrop-filter backdrop-blur-lg w-fit font-normal italic text-sm">
-                10 Jan 2024
+                {new Date(blog.date).toLocaleDateString()}
               </p>
               <p className="backdrop-filter backdrop-blur-lg w-fit font-semibold text-xl">
-                How to choose the perfect wallcolour for your office
+                {blog.title}
               </p>
             </div>
           </div>
-          <div className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px]">
-            <Image
-              src={"/assets/images/blog-2.png"}
-              alt="image"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute bottom-2 left-4 text-white font-semibold text-xl space-y-2">
-              <p className="backdrop-filter backdrop-blur-lg w-fit font-normal italic text-sm">
-                10 Jan 2024
-              </p>
-              <p className="backdrop-filter backdrop-blur-lg w-fit font-semibold text-xl">
-                How to choose the perfect wallcolour for your office
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
 
-        <div className="relative w-full h-[420px] lg:h-[370px] 2xl:h-[620px]">
+        {/* <div className="relative w-full h-[420px] lg:h-[370px] 2xl:h-[620px]">
           <Image
             src={"/assets/images/blog-3.png"}
             alt="image"
@@ -80,42 +73,7 @@ const BlogSection = ({ homepageData }: { homepageData: any }) => {
               </Button>
             </Link>
           </div>
-        </div>
-
-        <div className="flex flex-col gap-5">
-          <div className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px]">
-            <Image
-              src={"/assets/images/blog-4.png"}
-              alt="image"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute bottom-2 left-4 text-white font-semibold text-xl space-y-2">
-              <p className="backdrop-filter backdrop-blur-lg w-fit font-normal italic text-sm">
-                10 Jan 2024
-              </p>
-              <p className="backdrop-filter backdrop-blur-lg w-fit font-semibold text-xl">
-                How to choose the perfect wallcolour for your office
-              </p>
-            </div>
-          </div>
-          <div className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px]">
-            <Image
-              src={"/assets/images/blog-5.png"}
-              alt="image"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute bottom-2 left-4 text-white font-semibold text-xl space-y-2">
-              <p className="backdrop-filter backdrop-blur-lg w-fit font-normal italic text-sm">
-                10 Jan 2024
-              </p>
-              <p className="backdrop-filter backdrop-blur-lg w-fit font-semibold text-xl">
-                How to choose the perfect wallcolour for your office
-              </p>
-            </div>
-          </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
