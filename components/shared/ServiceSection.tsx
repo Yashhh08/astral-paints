@@ -35,7 +35,7 @@ const ServiceSection = ({ homepageData }: { homepageData: any }) => {
           <div className="bg-[#FFE710] backdrop-filter bg-opacity-60 backdrop-blur-lg absolute left-0 bottom-0 h-[143px] w-full p-5 flex flex-col gap-1.5">
             <p className="font-semibold text-xl">Wall Painting</p>
             <p className="truncate">Lorem ipsum dolor sit amet consectetur.</p>
-            <Link href="/contact">
+            <Link href="#">
               <Button className="bg-white text-black hover:text-white font-semibold rounded-[20px]">
                 Read More
               </Button>
@@ -54,7 +54,7 @@ const ServiceSection = ({ homepageData }: { homepageData: any }) => {
           <div className="bg-[#FFE710] backdrop-filter bg-opacity-60 backdrop-blur-lg absolute left-0 bottom-0 h-[143px] w-full p-5 flex flex-col gap-1.5">
             <p className="font-semibold text-xl">Water Solution</p>
             <p className="truncate">Lorem ipsum dolor sit amet consectetur.</p>
-            <Link href="/contact">
+            <Link href="#">
               <Button className="bg-white text-black hover:text-white font-semibold rounded-[20px]">
                 Read More
               </Button>
@@ -73,7 +73,7 @@ const ServiceSection = ({ homepageData }: { homepageData: any }) => {
           <div className="bg-[#FFE710] backdrop-filter bg-opacity-60 backdrop-blur-lg absolute left-0 bottom-0 h-[143px] w-full p-5 flex flex-col gap-1.5">
             <p className="font-semibold text-xl">Painting</p>
             <p className="truncate">Lorem ipsum dolor sit amet consectetur.</p>
-            <Link href="/contact">
+            <Link href="#">
               <Button className="bg-white text-black hover:text-white font-semibold rounded-[20px]">
                 Read More
               </Button>

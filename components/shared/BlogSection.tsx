@@ -65,7 +65,7 @@ const BlogSection = ({
               10 stylish cream colour combination for your home
             </p>
             <Link
-              href="/contact"
+              href="#"
               className="max-md:flex justify-center items-center"
             >
               <Button className="bg-white text-[#0060AF] hover:text-white font-semibold rounded-[20px]">

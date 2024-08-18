@@ -28,7 +28,7 @@ const AboutVideo = ({
       >
         <source
           src={
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            "/assets/demo-video.mp4"
           }
           type="video/mp4"
         />
