@@ -21,7 +21,7 @@ export default async function Home() {
       </section>
 
       <section>
-        <AboutSection />
+        <AboutSection homepageData={homepage} />
       </section>
 
       <section>

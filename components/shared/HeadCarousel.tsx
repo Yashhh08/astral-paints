@@ -86,7 +86,7 @@ const HeadCarousel = ({ banners }: { banners: any }) => {
                     </h3>
 
                     <Link
-                      href="/contact"
+                      href={banner.bannerButton.url}
                       className="max-md:flex justify-center items-center mt-2"
                     >
                       <Button className="bg-white text-[#0060AF] hover:text-white font-semibold rounded-[20px]">
