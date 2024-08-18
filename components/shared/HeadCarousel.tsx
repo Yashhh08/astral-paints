@@ -19,7 +19,7 @@ import { FaArrowCircleDown } from "react-icons/fa";
 import { type CarouselApi } from "@/components/ui/carousel";
 import Image from "next/image";
 
-const HeadCarousel = () => {
+const HeadCarousel = ({ banners }: { banners: any }) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
@@ -64,97 +64,46 @@ const HeadCarousel = () => {
       ]}
     >
       <CarouselContent>
-        <CarouselItem>
-          <div className="h-[87vh] flex justify-between items-center bg-banner-1 text-white bg-cover bg-bottom max-sm:bg-center">
-            <div className="w-11/12 m-auto flex flex-col gap-4 justify-between items-center md:items-start h-screen pt-32 pb-16">
-              <div className="flex flex-col justify-between gap-2">
-                <h1 className="text-center md:text-left -space-y-5">
-                  <div className="text-4xl md:text-6xl 2xl:text-8xl font-semibold backdrop-filter backdrop-blur-lg md:w-fit">
-                    Interior
-                    <br />
-                    Emulsions
+        {banners.map((banner: any, index: number) => {
+          return (
+            <CarouselItem>
+              <div
+                className="h-[87vh] flex justify-between items-center text-white bg-cover bg-bottom max-sm:bg-center"
+                style={{
+                  backgroundImage: `url(${banner.bannerImage.node.sourceUrl})`,
+                }}
+              >
+                <div className="w-11/12 m-auto flex flex-col gap-4 justify-between items-center md:items-start h-screen pt-32 pb-16">
+                  <div className="flex flex-col justify-between gap-2">
+                    <h1 className="text-center md:text-left -space-y-5">
+                      <div className="text-4xl md:text-6xl 2xl:text-8xl font-semibold backdrop-filter backdrop-blur-lg md:w-fit">
+                        {banner.bannersTitle}
+                      </div>
+                    </h1>
+
+                    <h3 className="backdrop-filter backdrop-blur-lg md:w-fit max-sm:text-center">
+                      {banner.bannerDescription}
+                    </h3>
+
+                    <Link
+                      href="/contact"
+                      className="max-md:flex justify-center items-center mt-2"
+                    >
+                      <Button className="bg-white text-[#0060AF] hover:text-white font-semibold rounded-[20px]">
+                        {banner.bannerButton.title}
+                      </Button>
+                    </Link>
                   </div>
-                </h1>
-
-                <h3 className="backdrop-filter backdrop-blur-lg md:w-fit">
-                  Excellent fungal resistance | smooth finish
-                </h3>
-
-                <Link
-                  href="/contact"
-                  className="max-md:flex justify-center items-center mt-2"
-                >
-                  <Button className="bg-white text-[#0060AF] hover:text-white font-semibold rounded-[20px]">
-                    Read More
-                  </Button>
-                </Link>
+                </div>
               </div>
-            </div>
-          </div>
-        </CarouselItem>
-
-        <CarouselItem>
-          <div className="h-[87vh] flex justify-between items-center bg-banner-2 text-white bg-cover max-sm:bg-center relative">
-            <div className="w-11/12 m-auto flex flex-col gap-4 justify-between items-center md:items-start h-screen pt-32 pb-16">
-              <div className="flex flex-col justify-between gap-2">
-                <h1 className="text-center md:text-left -space-y-5">
-                  <div className="text-4xl md:text-6xl 2xl:text-8xl font-semibold backdrop-filter backdrop-blur-lg md:w-fit">
-                    Interior
-                    <br />
-                    Emulsions
-                  </div>
-                </h1>
-
-                <h3 className="backdrop-filter backdrop-blur-lg md:w-fit">
-                  Excellent fungal resistance | smooth finish
-                </h3>
-
-                <Link
-                  href="/contact"
-                  className="max-md:flex justify-center items-center mt-2"
-                >
-                  <Button className="bg-white text-[#0060AF] hover:text-white font-semibold rounded-[20px]">
-                    Read More
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </CarouselItem>
-
-        <CarouselItem>
-          <div className="h-[87vh] flex justify-between items-center bg-banner-3 text-white bg-cover max-sm:bg-center relative">
-            <div className="w-11/12 m-auto flex flex-col gap-4 justify-between items-center md:items-start h-screen pt-32 pb-16">
-              <div className="flex flex-col justify-between gap-2">
-                <h1 className="text-center md:text-left -space-y-5">
-                  <div className="text-4xl md:text-6xl 2xl:text-8xl font-semibold backdrop-filter backdrop-blur-lg md:w-fit">
-                    Interior
-                    <br />
-                    Emulsions
-                  </div>
-                </h1>
-
-                <h3 className="backdrop-filter backdrop-blur-lg md:w-fit">
-                  Excellent fungal resistance | smooth finish
-                </h3>
-
-                <Link
-                  href="/contact"
-                  className="max-md:flex justify-center items-center mt-2"
-                >
-                  <Button className="bg-white text-[#0060AF] hover:text-white font-semibold rounded-[20px]">
-                    Read More
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </CarouselItem>
+            </CarouselItem>
+          );
+        })}
       </CarouselContent>
       {/* <CarouselPrevious />
       <CarouselNext /> */}
       <div className="flex justify-start px-5 items-center space-x-2 absolute bottom-12">
-        {Array.from({ length: 3 }, (_, index) => (
+        {Array.from({ length: banners.length }, (_, index) => (
           <div
             key={index}
             onClick={() => onDotButtonClick(index)}
