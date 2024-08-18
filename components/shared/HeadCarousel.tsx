@@ -66,7 +66,7 @@ const HeadCarousel = ({ banners }: { banners: any }) => {
       <CarouselContent>
         {banners.map((banner: any, index: number) => {
           return (
-            <CarouselItem>
+            <CarouselItem key={banner.bannersTitle}>
               <div
                 className="h-[87vh] flex justify-between items-center text-white bg-cover bg-bottom max-sm:bg-center"
                 style={{

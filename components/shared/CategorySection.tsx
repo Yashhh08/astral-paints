@@ -24,7 +24,7 @@ const CategorySection = ({ homepageData }: { homepageData: any }) => {
       </div>
 
       <div className="grid grid-cols-2 gap-5 max-lg:flex-col max-lg:justify-center max-lg:items-center">
-        <div className="relative w-full h-[350px] lg:h-[370px] 2xl:h-[620px] col-span-2 lg:col-span-1 lg:row-span-2">
+        <div className="relative w-full h-[350px] lg:h-[370px] 2xl:h-[620px] col-span-2 lg:col-span-1 lg:row-span-2 hover:scale-105 transition-all duration-300">
           <Image
             src={homepageData.categories[0].image.node.sourceUrl}
             alt={homepageData.categories[0].title}
@@ -49,7 +49,11 @@ const CategorySection = ({ homepageData }: { homepageData: any }) => {
             .slice(1)
             .map((category: any, index: number) => {
               return (
-                <Link href={category.link} className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px]">
+                <Link
+                  key={category.title}
+                  href={category.link}
+                  className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px] hover:scale-105 transition-all duration-300"
+                >
                   <Image
                     src={category.image.node.sourceUrl}
                     alt="image"

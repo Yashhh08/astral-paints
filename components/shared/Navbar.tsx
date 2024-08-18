@@ -33,8 +33,8 @@ const Navbar = () => {
           {navbarLinks.map((link) => {
             return (
               <Link
-                href={link.path}
                 key={link.name}
+                href={link.path}
                 className="hover:scale-95 hover:underline underline-offset-4 transition-all"
               >
                 {link.name}

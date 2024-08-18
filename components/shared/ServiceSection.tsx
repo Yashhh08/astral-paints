@@ -24,7 +24,7 @@ const ServiceSection = ({ homepageData }: { homepageData: any }) => {
       </div>
 
       <div className="flex flex-col md:flex-row justify-around gap-5 items-center">
-        <div className="size-[385px] relative md:flex-1">
+        <div className="size-[385px] relative md:flex-1 hover:scale-105 transition-all duration-300">
           <Image
             src={"/assets/images/service-1.png"}
             alt="service-1"
@@ -43,7 +43,7 @@ const ServiceSection = ({ homepageData }: { homepageData: any }) => {
           </div>
         </div>
 
-        <div className="size-[385px] relative md:flex-1">
+        <div className="size-[385px] relative md:flex-1 hover:scale-105 transition-all duration-300">
           <Image
             src={"/assets/images/service-2.png"}
             alt="service-1"
@@ -62,7 +62,7 @@ const ServiceSection = ({ homepageData }: { homepageData: any }) => {
           </div>
         </div>
 
-        <div className="size-[385px] relative md:flex-1">
+        <div className="size-[385px] relative md:flex-1 hover:scale-105 transition-all duration-300">
           <Image
             src={"/assets/images/service-3.png"}
             alt="service-1"

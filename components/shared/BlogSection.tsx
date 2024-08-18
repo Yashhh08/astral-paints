@@ -31,7 +31,7 @@ const BlogSection = ({
         {blogs.map((blog: any) => (
           <div
             key={blog.slug}
-            className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px]"
+            className="relative w-full h-[200px] lg:h-[175px] 2xl:h-[300px] hover:scale-105 transition-all duration-300"
           >
             <Image
               src={blog.featuredImage.node.sourceUrl}
